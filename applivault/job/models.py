@@ -1,5 +1,8 @@
 from django.db import models
 
+from multiselectfield import MultiSelectField
+
+
 class Job(models.Model):
     job_name = models.CharField(max_length=125)
 
@@ -12,6 +15,5 @@ class Job(models.Model):
         ('Director', 'Director'),
         ('Exercutive', 'Exercutive')
     )
-    experience_level = models.CharField(max_length=100, choices=EXPERIENCE_LEVEL_CHOICES)
+    experience_level = MultiSelectField(choices=EXPERIENCE_LEVEL_CHOICES)
 
-    
