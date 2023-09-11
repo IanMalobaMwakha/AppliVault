@@ -1,13 +1,13 @@
 from django.db import models
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
-from datetime import date, datetime
+from datetime import date
 
 
 class Job(models.Model):
     job_name = models.CharField(max_length=125)
     job_poster = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    date_posted = models.DateField(auto_now_add=True)
+    date_posted = models.DateField()
 
     EXPERIENCE_LEVEL_CHOICES = (
         ('Internship', 'Internship'),
