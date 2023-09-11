@@ -6,7 +6,7 @@ from datetime import date, datetime
 
 class Job(models.Model):
     job_name = models.CharField(max_length=125)
-    job_poster = models.ForeignKey(User, on_delete=models.CASCADE)
+    job_poster = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     date_posted = models.DateField(auto_now_add=True)
 
     EXPERIENCE_LEVEL_CHOICES = (
@@ -16,7 +16,7 @@ class Job(models.Model):
         ('Mid-Senior Level', 'Mid-Senior Level'),
         ('Senior Level', 'Senior Level'),
         ('Director', 'Director'),
-        ('Exercutive', 'Exercutive')
+        ('Executive', 'Executive')
     )
     experience_level = MultiSelectField(max_length=125, choices=EXPERIENCE_LEVEL_CHOICES)
 
