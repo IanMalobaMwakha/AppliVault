@@ -21,5 +21,5 @@ class Job(models.Model):
     experience_level = MultiSelectField(max_length=125, choices=EXPERIENCE_LEVEL_CHOICES)
 
     def __str__(self):
-        return self.job_name + " | " + str(self.job_poster)
+        return self.job_name
 
