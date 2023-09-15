@@ -20,3 +20,10 @@ class Job(models.Model):
     )
     experience_level = MultiSelectField(max_length=125, choices=EXPERIENCE_LEVEL_CHOICES)
     job_details = models.TextField(null=True, blank=True)
+
+    JOB_TYPE_CHOICES = (
+        ('Remote', 'Remote'),
+        ('On-site', 'On-site'),
+        ('Hybrid', 'Hybrid')
+    )
+    job_type = MultiSelectField(choices=JOB_TYPE_CHOICES)
