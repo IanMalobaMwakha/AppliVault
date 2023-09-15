@@ -26,4 +26,5 @@ class Job(models.Model):
         ('On-site', 'On-site'),
         ('Hybrid', 'Hybrid')
     )
-    job_type = MultiSelectField(choices=JOB_TYPE_CHOICES)
+    job_type = MultiSelectField(max_length=125, choices=JOB_TYPE_CHOICES)
+
