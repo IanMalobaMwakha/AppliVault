@@ -1,8 +1,7 @@
+from datetime import date
 from django.db import models
-
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
-from datetime import date
 
 
 class Job(models.Model):
@@ -20,6 +19,19 @@ class Job(models.Model):
         ('Executive', 'Executive')
     )
     experience_level = MultiSelectField(max_length=125, choices=EXPERIENCE_LEVEL_CHOICES)
+    
+    skills = models.ListField(default=list, blank=True)
 
-    def __str__(self):
-        return self.job_name
+    def add_skill(self, skill):
+        if skill not in self.skills:
+            self.skills.append(skill)
+            self.save()
+
+    def remove_skill(self, skill):
+        if skill in self.skills:
+            self.skills.remove(skill)
+            self.save()
+
+    def clear_skills(self):
+        self.skills = []
+        self.save()
