@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Job(models.Model):
     job_name = models.CharField(max_length=125)
     job_poster = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    date_posted = models.DateField(auto_now_add=True)
+    # date_posted = models.DateField(auto_now_add=True)
 
     EXPERIENCE_LEVEL_CHOICES = (
         ('Internship', 'Internship'),
