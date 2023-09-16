@@ -17,7 +17,7 @@ class Job(models.Model):
         ('Executive', 'Executive')
     )
     experience_level = MultiSelectField(max_length=125, choices=EXPERIENCE_LEVEL_CHOICES, blank=True)
-    job_details = models.TextField(null=True)
+    job_details = models.TextField(null=True, blank=True)
 
     JOB_TYPE_CHOICES = (
         ('Remote', 'Remote'),
@@ -26,3 +26,5 @@ class Job(models.Model):
     )
     job_type = MultiSelectField(max_length=125, choices=JOB_TYPE_CHOICES, blank=True)
 
+    def __str__(self):
+        return self.job_name
