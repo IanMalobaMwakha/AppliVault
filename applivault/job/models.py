@@ -9,7 +9,7 @@ class Job(models.Model):
     job_poster = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     company_name = models.CharField(max_length=100, blank=True, null=True)
     company_website_link = models.CharField(max_length=500, blank=True, null=True)
-    job_location = CountryField(null=True, blank=True)
+    job_location = CountryField(blank_label="(Select Countries)",multiple=True, blank=True)
     job_alternative_location = models.CharField(max_length=250, blank=True, null=True)
     EXPERIENCE_LEVEL_CHOICES = (
         ('Internship', 'Internship'),
@@ -29,6 +29,7 @@ class Job(models.Model):
     )
     job_type = MultiSelectField(max_length=125, choices=JOB_TYPE_CHOICES, blank=True)
     job_details = models.TextField(null=True, blank=True)
+    job_salary = models.CharField(max_length=100, blank=True, null=True)
     job_application_link = models.CharField(max_length=125, blank=True, null=True)
 
     def __str__(self):
