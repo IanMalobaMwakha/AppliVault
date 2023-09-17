@@ -2,6 +2,7 @@ from django.db import models
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
 from django_countries.fields import CountryField
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class Job(models.Model):
@@ -28,7 +29,7 @@ class Job(models.Model):
         ('Hybrid', 'Hybrid')
     )
     job_type = MultiSelectField(max_length=125, choices=JOB_TYPE_CHOICES, blank=True)
-    job_details = models.TextField(null=True, blank=True)
+    job_details = CKEditor5Field(null=True, blank=True)
     job_salary = models.CharField(max_length=100, blank=True, null=True)
     job_application_link = models.CharField(max_length=125, blank=True, null=True)
 
