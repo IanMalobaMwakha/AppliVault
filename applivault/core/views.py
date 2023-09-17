@@ -1,4 +1,11 @@
 from django.shortcuts import render
 
+from job.models import Job
+
 def index(request):
-    return render(request, "core/index.html")
+    jobs = Job.objects.all()
+
+    return render(request, "core/index.html", {
+        'jobs': jobs,
+    })
+

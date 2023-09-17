@@ -16,9 +16,24 @@
          </div>
       </div>
    </div>
-   <h1>Welcome to Applivault !!!</h1>      
-   <h1 class="display-4 mb-4 ">This is a beautiful Bootstrap 4 Navbar with Social Media Icons </h1>
-   <p class="lead mb-5">There is nothing more rare, nor more beautiful, than a woman being unapologeticall</p>
+   <h1>Below are jobs</h1>  
+   <hr>    
+   {% for job in jobs %}
+      <ul>
+         <li>
+            <h2>{{ job.job_name }}</h2>
+            <ul>
+               <li>{{ job.job_poster }}</li>
+               <li>{{ job.company_name }}</li>
+               <li>{{ job.company_website_link }}</li>
+               <li>{{ job.experience_level }}</li>
+               <li>{{ job.job_type }}</li>
+               <li>{{ job.job_details }}</li>
+               <li>{{ job.job_application_link }}</li>
+            </ul>
+         </li>
+      </ul>
+   {% endfor %}
    <div>
 
    </div>
