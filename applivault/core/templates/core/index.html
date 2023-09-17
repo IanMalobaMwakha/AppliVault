@@ -36,15 +36,15 @@
                   <li>{{ job.company_website_link }}</li>
                   <li>{{ job.experience_level }}</li>
                   <li>{{ job.job_type }}</li>
-                     {% if job.job_details %}
-                        <li>{{ job.job_details }}</li>
-                     {% else %}
-                        <li><i>(Job details not provided...)</i></li>
-                     {% endif %}
-                  <li>{{ job.job_application_link }}</li>
+                  {% if job.job_details %}
+                     <li>{% job.job_details %}</li>
+                  {% else %}
+                     <i>(Job details not provided...)</i>
+                  {% endif %}
+                     <li>{{ job.job_application_link }}</li>
                </ul>
             </li>
          </ul>
-      {% endfor %}
+         
    </div>
 {% endblock %}
