@@ -10,7 +10,7 @@ class Job(models.Model):
     company_name = models.CharField(max_length=100, blank=True, null=True)
     company_website_link = models.CharField(max_length=500, blank=True, null=True)
     job_location = CountryField(null=True, blank=True)
-    job_alternative_location = models.CharField(blank=True, null=True)
+    job_alternative_location = models.CharField(max_length=250, blank=True, null=True)
     EXPERIENCE_LEVEL_CHOICES = (
         ('Internship', 'Internship'),
         ('Entry Level', 'Entry Level'),

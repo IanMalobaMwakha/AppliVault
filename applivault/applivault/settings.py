@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'multiselectfield',
-    'django-countries',
+    'django_countries',
     'job',
 ]
 
