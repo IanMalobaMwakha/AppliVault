@@ -159,7 +159,7 @@ customColorPalette = [
         },
 ]
 
-CKEDITOR_5_FILE_STORAGE = "/media/ckeditorfiles.CustomStorage" # optional
+# CKEDITOR_5_FILE_STORAGE = "/media/ckeditorfiles.CustomStorage" # optional
 CKEDITOR_5_CONFIGS = {
     'default': {
         'toolbar': ['heading', '|', 'bold', 'italic', 'link',
