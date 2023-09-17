@@ -37,7 +37,7 @@
                   <li>{{ job.experience_level }}</li>
                   <li>{{ job.job_type }}</li>
                   {% if job.job_details %}
-                     <li>{% job.job_details %}</li>
+                     <li>{{ job.job_details|safe }}</li>
                   {% else %}
                      <i>(Job details not provided...)</i>
                   {% endif %}
@@ -45,6 +45,6 @@
                </ul>
             </li>
          </ul>
-         
+      {% endfor %}   
    </div>
 {% endblock %}
