@@ -9,3 +9,5 @@ def index(request):
         'jobs': jobs,
     })
 
+def search(request):
+    return render(request, "core/search_jobs.html")
