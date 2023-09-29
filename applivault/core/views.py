@@ -10,4 +10,7 @@ def index(request):
     })
 
 def search(request):
-    return render(request, "core/search_jobs.html")
+    jobs = Job.objects.all()
+    return render(request, "core/search_jobs.html", {
+        'jobs': jobs,
+    })
