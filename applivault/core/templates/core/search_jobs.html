@@ -13,8 +13,9 @@
                 <button class="btn btn-outline-info" type="submit">Search</button>
             </form>  
 
-           <hr>    
-           {% for job in jobs %}
+           <hr>
+           <div class="container">
+            {% for job in jobs %}
               <ul>
                  <li>
                     <h2>{{ job.job_name }}</h2>
@@ -40,7 +41,9 @@
                     </ul>
                  </li>
               </ul>
-           {% endfor %}   
+            {% endfor %}
+           </div>    
+              
         </div>
      </div>
 </div>
