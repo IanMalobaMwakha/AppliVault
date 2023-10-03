@@ -15,7 +15,6 @@
 
            <hr>
            <div class="container">
-            {% for job in jobs %}
               <ul>
                  <li>
                     <h2>{{ job.job_name }}</h2>
@@ -24,9 +23,7 @@
                        <li>{{ job.company_name }}</li>
                        <li>Locations:</li>
                           <ul>
-                             {% for location in job.job_location %}
-                                <li>{{ location.name }}</li>
-                             {% endfor %}
+                            <li>{{ location.name }}</li>
                           </ul>
                        <li>{{ job.job_alternative_location }}</li>
                        <li>{{ job.company_website_link }}</li>
@@ -41,9 +38,7 @@
                     </ul>
                  </li>
               </ul>
-            {% endfor %}
-           </div>    
-              
+           </div>                  
         </div>
      </div>
 </div>
