@@ -4,6 +4,9 @@ from job.models import Job
 
 from django.db.models import Q
 
+from django.shortcuts import render, get_object_or_404, redirect
+
+
 
 def index(request):
     jobs = Job.objects.all()
@@ -38,7 +41,7 @@ def search(request):
     })
 
 def job_details(request, pk):
-    job = Job.objects.filter(pk)
+    job = get_object_or_404(Job, pk=pk)
 
     return render(request, "core/job_details.html", {
         'job': job,
