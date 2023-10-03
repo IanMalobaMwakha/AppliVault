@@ -37,3 +37,10 @@ def search(request):
         'jobs': jobs,
     })
 
+def job_details(request, pk):
+    job = Job.objects.filter(pk)
+
+    return render(request, "core/job_details.html", {
+        'job': job,
+        'pk': pk,
+    })
