@@ -6,12 +6,7 @@
 <div>
     <div  style="background-color: rgb(10, 15, 68); color: aliceblue;">
         <div class="container py-5">
-            <br><br><br>
-
-            <form action="{% url 'search' %}" method="get" class="d-flex">
-                <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-info" type="submit">Search</button>
-            </form>  
+            <br><br><br> 
 
            <hr>
            <div class="container">
@@ -23,7 +18,7 @@
                        <li>{{ job.company_name }}</li>
                        <li>Locations:</li>
                           <ul>
-                            <li>{{ location.name }}</li>
+                            <li>{{ job.job_location.name }}</li>
                           </ul>
                        <li>{{ job.job_alternative_location }}</li>
                        <li>{{ job.company_website_link }}</li>
