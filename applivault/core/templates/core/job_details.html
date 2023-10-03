@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Search Jobs{% endblock %}
+
+{% block content %}
+<div>
+    <div  style="background-color: rgb(10, 15, 68); color: aliceblue;">
+        <div class="container py-5">
+            <br><br><br>
+
+            <form action="{% url 'search' %}" method="get" class="d-flex">
+                <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-info" type="submit">Search</button>
+            </form>  
+
+           <hr>
+           <div class="container">
+            {% for job in jobs %}
+              <ul>
+                 <li>
+                    <h2>{{ job.job_name }}</h2>
+                    <ul>
+                       <li>POSTED BY:{{ job.job_poster }}</li>
+                       <li>{{ job.company_name }}</li>
+                       <li>Locations:</li>
+                          <ul>
+                             {% for location in job.job_location %}
+                                <li>{{ location.name }}</li>
+                             {% endfor %}
+                          </ul>
+                       <li>{{ job.job_alternative_location }}</li>
+                       <li>{{ job.company_website_link }}</li>
+                       <li>{{ job.experience_level }}</li>
+                       <li>{{ job.job_type }}</li>
+                       {% if job.job_details %}
+                          <li>{{ job.job_details|safe }}</li>
+                       {% else %}
+                          <i>(Job details not provided...)</i>
+                       {% endif %}
+                          <li>{{ job.job_application_link }}</li>
+                    </ul>
+                 </li>
+              </ul>
+            {% endfor %}
+           </div>    
+              
+        </div>
+     </div>
+</div>
+{% endblock %}
