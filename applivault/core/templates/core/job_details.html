@@ -18,10 +18,9 @@
                        <li>{{ job.company_name }}</li>
                        <li>Locations:</li>
                         <ul>
-                           {% if job.job_location %}
-                              <li>{{ job_location.name }}</li>
-                           {% endif %}
-                        </ul>
+                           <li>{{ job.job_location.name }}</li>
+                        </ul>                    
+                     
                        <li>{{ job.job_alternative_location }}</li>
                        <li>{{ job.company_website_link }}</li>
                        <li>{{ job.experience_level }}</li>
