@@ -9,6 +9,6 @@ urlpatterns = [
     path('applied-jobs/', views.applied_jobs, name='applied_jobs'),
     path('post-a-job/', views.post_job, name='post_job'),
     path('my-posted-jobs/', views.my_posted_jobs, name='my_posted_jobs'),
-
+    path('about/', views.about, name='about'),
 
 ]
