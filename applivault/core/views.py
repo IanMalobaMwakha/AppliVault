@@ -61,3 +61,17 @@ def applied_jobs(request):
     return render(request, "core/applied_jobs.html", {
         'jobs': jobs,
     })
+
+def post_job(request):
+    jobs = Job.objects.all()
+
+    return render(request, "core/post_job.html", {
+        'jobs': jobs,
+    })
+
+def my_posted_jobs(request):
+    jobs = Job.objects.all()
+
+    return render(request, "core/my_posted_jobs.html", {
+        'jobs': jobs,
+    })
