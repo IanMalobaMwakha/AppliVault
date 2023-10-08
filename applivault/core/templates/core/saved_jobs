@@ -4,3 +4,6 @@
 
 {% block content %}
 
+<h3>MY SAVED JOBS</h3>
+
+{% endblock %}
