@@ -47,3 +47,10 @@ def job_details(request, pk):
         'job': job,
         'pk': pk,
     })
+
+def saved_jobs(request):
+    jobs = Job.objects.all()
+
+    return render(request, "core/saved_jobs.html", {
+        'jobs': jobs,
+    })
