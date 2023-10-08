@@ -6,4 +6,5 @@ urlpatterns = [
     path('search/', views.search, name="search"),
     path('job-details/<int:pk>/', views.job_details, name='job_details'),
     path('saved-jobs/', views.saved_jobs, name='saved_jobs'),
+    path('applied-jobs/', views.applied_jobs, name='applied_jobs'),
 ]
