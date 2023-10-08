@@ -54,3 +54,10 @@ def saved_jobs(request):
     return render(request, "core/saved_jobs.html", {
         'jobs': jobs,
     })
+
+def applied_jobs(request):
+    jobs = Job.objects.all()
+
+    return render(request, "core/applied_jobs.html", {
+        'jobs': jobs,
+    })
