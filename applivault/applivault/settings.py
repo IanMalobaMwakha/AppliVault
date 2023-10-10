@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django_countries',
     'django_ckeditor_5',
     'job',
-    'userauth'
+    'userauth',
 ]
 
 MIDDLEWARE = [
