@@ -5,5 +5,7 @@ app_name = "userauth"
 
 
 urlpatterns = [
-    path("register", views.register_request, name="register")
+    path("register/", views.register_request, name="register")
 ]
+
+
