@@ -14,3 +14,6 @@ def register_request(request):
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="main/register.html", context={"register_form":form})
+
+
+# https://ordinarycoders.com/blog/article/django-user-register-login-logout
