@@ -16,4 +16,3 @@ def register_request(request):
 	return render (request=request, template_name="main/register.html", context={"register_form":form})
 
 
-# https://ordinarycoders.com/blog/article/django-user-register-login-logout
