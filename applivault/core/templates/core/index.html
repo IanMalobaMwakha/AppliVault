@@ -27,23 +27,12 @@
                <a href="{% url 'job_details' job.id %}" target="_blank"><h2>{{ job.job_name }}</h2></a>
                <ul>
                   <li>POSTED BY:{{ job.job_poster }}</li>
-                  <li>{{ job.company_name }}</li>
                   <li>Locations:</li>
                      <ul>
                         {% for location in job.job_location %}
-                           <li>{{ location.name }}</li>
+                           -{{ location.name }}
                         {% endfor %}
                      </ul>
-                  <li>{{ job.job_alternative_location }}</li>
-                  <li>{{ job.company_website_link }}</li>
-                  <li>{{ job.experience_level }}</li>
-                  <li>{{ job.job_type }}</li>
-                  {% if job.job_details %}
-                     <li>{{ job.job_details|safe }}</li>
-                  {% else %}
-                     <i>(Job details not provided...)</i>
-                  {% endif %}
-                     <li>{{ job.job_application_link }}</li>
                </ul>
             </li>
          </ul>
